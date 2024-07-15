@@ -1,0 +1,229 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0; /* This might be hiding your titles, consider removing or changing it */
+}
+
+.results-carousel .item .image-title {
+  font-size: 1rem; /* Reset the font size for titles */
+  color: #000; /* Set title color */
+  text-align: center; /* Center the title */
+  margin-bottom: 5px; /* Space below the title */
+}
+
+.results-carousel img {
+  width: 100%; /* Make image responsive */
+  display: block; /* Remove extra space below image */
+  margin: 0 auto; /* Center image */
+}
+
+/* Reset any specific item styles if needed */
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.7em;
+}
+
+table thead th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 1em;
+}
+
+table tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr.highlight td {
+  background-color: #d0e0f0;
+  color: #333;
+  font-weight: bold;
+}
+
+table tbody tr td:nth-child(2) {
+  text-align: center;
+}
+
+table tbody tr td:nth-child(3),
+table tbody tr td:nth-child(4),
+table tbody tr td:nth-child(5),
+table tbody tr td:nth-child(6) {
+  text-align: right;
+}
+
+
+.green-text {
+  color: green; /* This will style the percentage text in green */
+  font-size: 0.8em;
+}
+
+.gray-text {
+  color: gray; /* This will style the percentage text in green */
+  font-size: 0.7em;
+}
+
+.red-text {
+  color: red; /* This will style the percentage text in green */
+}
+
+.blue-text {
+  color: blue; /* This will style the percentage text in green */
+}
+
+
