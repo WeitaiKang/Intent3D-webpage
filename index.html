@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="CODAMAL: CONTRASTIVE DOMAIN ADAPTATION FOR MALARIA DETECTION IN LOW-COST MICROSCOPES">
+        content="FinePseudo ECCV2024">
   <title>CodaMal: Contrastive Domain Adaptation for Malaria Detection in Low-Cost Microscopes</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -46,22 +46,19 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CodaMal: Contrastive Domain Adaptation for Malaria Detection in Low-Cost Microscopes</h1>
+          <h1 class="title is-1 publication-title">FinePseudo: Improving Pseudo-Labelling through Temporal-Alignablity for Semi-Supervised Fine-Grained Action Recognition</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://daveishan.github.io/">Ishan Dave</a>,</span>
             <span class="author-block">
-              <a href="https://github.com/tristandb8">Tristan de Blegiers</a>,</span>
-            <span class="author-block">
-              <a href="https://www.crcv.ucf.edu/chenchen/">Chen Chen</a>,</span>
-            </span>
+              <a href="https://nayeemrizve.github.io/">Mamshad Nayeem Rizve</a>,</span>
             <span class="author-block">
               <a href="https://www.crcv.ucf.edu/person/mubarak-shah/">Mubarak Shah</a>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">University of Central Florida</span>
+            <span class="author-block">University of Central Florida, Amazon Research</span>
           </div>
 
           <div class="column has-text-centered">
@@ -116,31 +113,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Malaria is a major health issue worldwide, and its diagnosis
-            requires scalable solutions that can work effectively with low-
-            cost microscopes (LCM). Deep learning-based methods have
-            shown success in computer-aided diagnosis from microscopic
-            images. However, these methods need annotated images that
-            show cells affected by malaria parasites and their life stages.
-            Annotating images from LCM significantly increases the bur-
-            den on medical experts compared to annotating images from
-            high-cost microscopes (HCM). For this reason, a practical so-
-            lution would be trained on HCM images which should gener-
-            alize well on LCM images during testing. While earlier meth-
-            ods adopted a multi-stage learning process, they did not offer
-            an end-to-end approach. In this work, we present an end-to-
-            end learning framework, named CodaMal (COntrastive Do-
-            main Adpation for MALaria). In order to bridge the gap be-
-            tween HCM (training) and LCM (testing), we propose a do-
-            main adaptive contrastive loss. It reduces the domain shift
-            by promoting similarity between the representations of HCM
-            and its corresponding LCM image, without imposing an ad-
-            ditional annotation burden. In addition, the training objective
-            includes standard object detection losses, ensuring the accu-
-            rate detection of malaria parasites. On the publicly available
-            large-scale M5-dataset, our proposed method shows a signifi-
-            cant improvement of 44% over the state-of-the-art methods in
-            terms of the mean average precision metric (mAP).
+            Real-life applications of action recognition often require a fine-grained understanding of subtle movements, e.g., in sports analytics, user interactions in AR/VR, and surgical videos. Although fine-grained actions are more costly to annotate, existing semi-supervised action recognition has mainly focused on coarse-grained action recognition. Since fine-grained actions are more challenging due to the absence of scene bias, classifying these actions requires an understanding of action-phases. Hence, existing coarse-grained semi-supervised methods do not work effectively. In this work, we for the first time thoroughly investigate semi-supervised fine-grained action recognition (FGAR). We observe that alignment distances like dynamic time warping (DTW) provide a suitable action-phase-aware measure for comparing fine-grained actions, a concept previously unexploited in FGAR. However, since regular DTW distance is pairwise and assumes strict alignment between pairs, it is not directly suitable for classifying fine-grained actions. To utilize such alignment distances in a limited-label setting, we propose an Alignability-Verification-based Metric learning technique to effectively discriminate between fine-grained action pairs. Our learnable alignability score provides a better phase-aware measure, which we use to refine the pseudo-labels of the primary video encoder. Our collaborative pseudo-labeling-based framework 'FinePseudo' significantly outperforms prior methods on four fine-grained action recognition datasets: Diving48, FineGym99, FineGym288, and FineDiving, and shows improvement on existing coarse-grained datasets: Kinetics400 and Something-SomethingV2. We also demonstrate the robustness of our collaborative pseudo-labeling in handling novel unlabeled classes in open-world semi-supervised setups.
           </p>
         </div>
       </div>
