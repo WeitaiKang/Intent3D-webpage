@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CODAMAL: CONTRASTIVE DOMAIN ADAPTATION FOR MALARIA DETECTION IN LOW-COST MICROSCOPES">
+  <title>CodaMal: Contrastive Domain Adaptation for Malaria Detection in Low-Cost Microscopes</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CodaMal: Contrastive Domain Adaptation for Malaria Detection in Low-Cost Microscopes</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://daveishan.github.io/">Ishan Dave</a>,</span>
+            <span class="author-block">
+              <a href="https://github.com/tristandb8">Tristan de Blegiers</a>,</span>
+            <span class="author-block">
+              <a href="https://www.crcv.ucf.edu/chenchen/">Chen Chen</a>,</span>
+            </span>
+            <span class="author-block">
+              <a href="https://www.crcv.ucf.edu/person/mubarak-shah/">Mubarak Shah</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">University of Central Florida</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2402.10478"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/DAVEISHAN/CodaMal"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              
+              
+              
+            </div>
+            
+
+
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Malaria is a major health issue worldwide, and its diagnosis
+            requires scalable solutions that can work effectively with low-
+            cost microscopes (LCM). Deep learning-based methods have
+            shown success in computer-aided diagnosis from microscopic
+            images. However, these methods need annotated images that
+            show cells affected by malaria parasites and their life stages.
+            Annotating images from LCM significantly increases the bur-
+            den on medical experts compared to annotating images from
+            high-cost microscopes (HCM). For this reason, a practical so-
+            lution would be trained on HCM images which should gener-
+            alize well on LCM images during testing. While earlier meth-
+            ods adopted a multi-stage learning process, they did not offer
+            an end-to-end approach. In this work, we present an end-to-
+            end learning framework, named CodaMal (COntrastive Do-
+            main Adpation for MALaria). In order to bridge the gap be-
+            tween HCM (training) and LCM (testing), we propose a do-
+            main adaptive contrastive loss. It reduces the domain shift
+            by promoting similarity between the representations of HCM
+            and its corresponding LCM image, without imposing an ad-
+            ditional annotation burden. In addition, the training objective
+            includes standard object detection losses, ensuring the accu-
+            rate detection of malaria parasites. On the publicly available
+            large-scale M5-dataset, our proposed method shows a signifi-
+            cant improvement of 44% over the state-of-the-art methods in
+            terms of the mean average precision metric (mAP).
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+  
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <p>
+              Schematic diagram of our end-to-end method for malaria detection. (a) During training, an HCM image (Xih) and its annotations (Yih) are paired with the corresponding unannotated LCM image (Xil) that is captured from the same field-of-view, instance i.
+              The HCM image (Xih) is utilized to train the backbone (f) and its detection head (h) using the standard object detection losses (LOD). For domain adaptation, both Xih and Xil are processed through the same backbone (f) and non-linear 
+              projection head (g). The HCM representation, Zih, is encouraged to maximize similarity with the corresponding LCM instance (Zil) (indicated by the green arrow), while minimizing similarity with the representations of other LCM and HCM image
+              instances (j,k) i.e. instances captured from different FOV or different blood smear (highlighted by the red arrow). (b) Once trained, the model receives LCM images and predicts the location and life-stage of the malaria parasite as its final output.
+            </p>
+            <img src="./static/images/img1.jpg"
+                class="interpolation-image"
+                alt="Interpolate start reference image."/>
+          </div>
+        </div>
+      </div>
+
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Results</h2>
+            <div class="content has-text-justified">
+              <p>
+                Our method, CodaMal, significantly outperforms prior best results by 42.93% and 44.08% on 1000× and 400× of FOV in terms of mAP and sets a new
+                state-of-art. Also, it is worth noting that our model utilizes only 21.2M parameters which is slightly less than ResNet50 (23M) used by prior work.
+                Apart, from mAP metric, our method achieves a precision of 0.8761 and Recall of 0.4571, on 1000× magnification FOV setting.
+              </p>
+              <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-steve">
+                  <h3 class="image-title">1000x</h3>
+                  <img src="./static/images/1000x.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+                </div>
+                <div class="item item-chair-tp">
+                  <h3 class="image-title">400x</h3>
+                  <img src="./static/images/400x.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+                </div>
+                <div class="item item-shiba">
+                  <h3 class="image-title">100x</h3>
+                  <img src="./static/images/100x.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+                </div>
+                <div class="item item-steve">
+                  <h3 class="image-title">1000x</h3>
+                  <img src="./static/images/1000x.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+                </div>
+                <div class="item item-chair-tp">
+                  <h3 class="image-title">400x</h3>
+                  <img src="./static/images/400x.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+                </div>
+                <div class="item item-shiba">
+                  <h3 class="image-title">100x</h3>
+                  <img src="./static/images/100x.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+                </div>
+              </div>
+              <p></p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>End-to-End Training?</th>
+                    <th>Number of Params (M)</th>
+                    <th>Inf. time (ms)</th>
+                    <th colspan="2">HCM → LCM</th>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>1000x</th>
+                    <th>400x</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Chen et al.. <span class="gray-text">CVPR'18</span></td>
+                    <td>✓</td>
+                    <td>43.7</td>
+                    <td>184</td>
+                    <td>17.6</td>
+                    <td>21.5</td>
+                  </tr>
+                  <tr>
+                    <td>Saito et al. <span class="gray-text">CVPR'19</span></td>
+                    <td>✓</td>
+                    <td>43.7</td>
+                    <td>184</td>
+                    <td>24.8</td>
+                    <td>21.4</td>
+                  </tr>
+                  <tr>
+                    <td>Xu et al. <span class="gray-text">CVPR'20</span></td>
+                    <td>✓</td>
+                    <td>43.7</td>
+                    <td>184</td>
+                    <td>15.5</td>
+                    <td>21.6</td>
+                  </tr>
+                  <tr>
+                    <td>Faster RCNN</td>
+                    <td>✓</td>
+                    <td>43.7</td>
+                    <td>184</td>
+                    <td>17.1</td>
+                    <td>26.7</td>
+                  </tr>
+                  <tr>
+                    <td>Faster RCNN + Synthetic LCM Tuning</td>
+                    <td>✗</td>
+                    <td>43.7</td>
+                    <td>184</td>
+                    <td>33.3</td>
+                    <td>31.8</td>
+                  </tr>
+                  <tr>
+                    <td>Faster RCNN + Synthetic LCM Tuning + Ranking Loss</td>
+                    <td>✗</td>
+                    <td>43.7</td>
+                    <td>184</td>
+                    <td>35.7</td>
+                    <td>32.4</td>
+                  </tr>
+                  <tr>
+                    <td>Faster RCNN + Synthetic LCM Tuning + Triplet Loss</td>
+                    <td>✗</td>
+                    <td>43.7</td>
+                    <td>184</td>
+                    <td>37.2</td>
+                    <td>32.2</td>
+                  </tr>
+                  <tr>
+                    <td>Sultani et al. <span class="gray-text">CVPR'22</span></td>
+                    <td>✓</td>
+                    <td>43.7</td>
+                    <td>184</td>
+                    <td><u><span class="blue-text">37.5</span></u></td>
+                    <td><u><span class="blue-text">33.8</span></u></td>
+                  </tr>
+                  <tr class="highlight">
+                    <td><strong>CodaMal (Ours)</strong></td>
+                    <td><strong>✓</strong></td>
+                    <td><strong>21.2</strong></td>
+                    <td><strong>8.9</strong></td>
+                    <td><strong><span class="red-text">53.6</span></strong></td>
+                    <td><strong><span class="red-text">48.7</span></strong></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                The performance metric is mAP @ 0.5 IoU. 1000× and 400× repre-
+                sent the magnification FOV of LCM images. Highlighted <strong><span class="red-text">red</span></strong> shows the best results and <u><span class="blue-text">blue</span></u> shows second best results.
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+        <section class="section">
+          <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h2 class="title is-3">Conclusion</h2>
+                <div class="content has-text-justified">
+                  <p>
+                    In conclusion, our study presents a novel end-to-end train-able method for the more practical setting of deep learning
+                    learning-based malaria parasite detection: training on HCM and testing on LCM images. The incorporation of the do-
+                    main adaptive contrastive loss bridges the domain gap by pro-moting invariance between HCM and LCM domains. Our
+                    method, CodaMal, substantially outperforms the prior best methods up to 44% and sets a new state-of-the-art. We are
+                    planning to open-source our implementation code upon the acceptance of this work. These findings not only highlight the potential of our
+                    method to enhance the early and accurate diagnosis of malaria but also emphasize the importance of domain adaptation in
+                    improving the generalization capabilities of deep learning-based models for microscopy applications. Future research
+                    directions may explore the application of our method to other microscopy-based diagnostic tasks, further refining
+                    the method and assessing its impact on a broader range of diseases and detection scenarios.
+                  </p>
+                </div>
+              </div>
+            </div>
+      <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">BibTeX</h2>
+          <pre><code>
+           @article{dave2024codamal,
+              title={CodaMal: Contrastive Domain Adaptation for Malaria Detection in Low-Cost Microscopes},
+              author={Dave, Ishan Rajendrakumar and de Blegiers, Tristan and Chen, Chen and Shah, Mubarak},
+              journal={arXiv preprint arXiv:2402.10478},
+              year={2024}
+            }
+          </code></pre>
+        </div>
+      </section>
+
+</body>
+</html>
