@@ -135,8 +135,8 @@
      
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-
-        <embed src="images/fig1.pdf" type="application/pdf" width="100%">
+        
+        <img src="images/motive.png" style="width: 100%;">
 
         <p style="text-align: justify; margin-top: 20px;">
           Motivation: We introduce 3D intention grounding (right), a new task for detecting the object of interest using a 3D bounding box in a 3D scene, guided by human intention expressed in text (e.g., <em>"I want something to support my back to relieve the pressure"</em>). In contrast, the existing 3D visual grounding (left) relies on human reasoning and references for detection. The illustration clearly distinguishes that observation and reasoning are manually executed by human (left) and automated by AI (right).
@@ -167,7 +167,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
         
-          <embed src="images/data_collect.pdf" type="application/pdf" width="100%">
+        <img src="images/data.png" style="width: 100%;">
 
           <p style="text-align: justify; margin-top: 20px;">
             <strong>Alignability-Verification based Metric Learning</strong> is proposed to decide how well two video instances are alignable and produce an `alignability score' for effective learning from a limited labeled set. Our approach employs a triplet loss , considering videos from identical action classes as positive and those from different classes as negative. We selectively mine hard-negatives from the sampled minibatch based on alignment distance, presenting a challenging learning task for the model. Additionally, we incorporate a matching loss to quantify the alignment between videos, serving as a verification task to determine whether a video pair belongs to the same class (i.e., alignable or target label = 1) or different classes (i.e., non-alignable or target label = 0).
@@ -177,7 +177,8 @@
     <!-- <br> -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-          <img src="static/images/colab_pl_dia_eccv2.drawio-1.png" style="width: 100%;">
+        
+          <img src="images/method.png" style="width: 100%;">
 
           <p style="text-align: justify; margin-top: 20px;">
             <strong>Collaborative Pseudo-labeling:</strong> The unlabeled instance undergoes processing by both video encoders (Action Encoder and Alignability Encoder). For the Action Encoder, its prediction is derived via its classification head. For the Alignability Encoder, the embedding of the instance computes class-wise alignability scores against a gallery of labeled embeddings. These scores are then used to generate a class-wise prediction using the non-parametric classifier. As these predictions stem from distinct supervisory signals—one from video-level and the other from alignability-based supervision—they offer complementary insights, resulting in a refined collaborative pseudo-label.
