@@ -136,10 +136,10 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
 
-        <img src="static/images/fgteaser_try14.drawio-1.png" style="width: 100%;">
+        <img src="static/images/fig1.pdf" style="width: 100%;">
 
         <p style="text-align: justify; margin-top: 20px;">
-          <strong>Motivation: We introduce 3D intention grounding (right), a new task for detecting the object of interest using a 3D bounding box in a 3D scene, guided by human intention expressed in text (e.g., <p><em>"I want something to support my back to relieve the pressure"</em></p>). In contrast, the existing 3D visual grounding (left) relies on human reasoning and references for detection. The illustration clearly distinguishes that observation and reasoning are manually executed by human (left) and automated by AI (right).
+          <strong>Motivation: We introduce 3D intention grounding (right), a new task for detecting the object of interest using a 3D bounding box in a 3D scene, guided by human intention expressed in text (e.g., <em>"I want something to support my back to relieve the pressure"</em>). In contrast, the existing 3D visual grounding (left) relies on human reasoning and references for detection. The illustration clearly distinguishes that observation and reasoning are manually executed by human (left) and automated by AI (right).
         </p>
     </div>
     </div> 
@@ -152,7 +152,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In real-life scenarios, humans seek out objects in the 3D world to fulfill their daily needs or intentions. This inspires us to introduce 3D intention grounding, a new task in 3D object detection employing RGB-D, based on human intention, such as <p><em>"I want something to support my back."</em></p> Closely related, 3D visual grounding focuses on understanding human reference. To achieve detection based on human intention, it relies on humans to observe the scene, reason out the target that aligns with their intention (<p><em>"pillow"</em></p> in this case), and finally provide a reference to the AI system, such as <p><em>"A pillow on the couch"</em></p>. Instead, 3D intention grounding challenges AI agents to automatically observe, reason and detect the desired target solely based on human intention. To tackle this challenge, we introduce the new <strong>Intent3D</strong> dataset, consisting of 44,990 intention texts associated with 209 fine-grained classes from 1,042 scenes of the ScanNet dataset. We also establish several baselines based on different language-based 3D object detection models on our benchmark. Finally, we propose <strong>IntentNet</strong>, our unique approach, designed to tackle this intention-based detection problem. It focuses on three key aspects: intention understanding, reasoning to identify object candidates, and cascaded adaptive learning that leverages the intrinsic priority logic of different losses for multiple objective optimization. 
+            In real-life scenarios, humans seek out objects in the 3D world to fulfill their daily needs or intentions. This inspires us to introduce 3D intention grounding, a new task in 3D object detection employing RGB-D, based on human intention, such as <em>"I want something to support my back."</em> Closely related, 3D visual grounding focuses on understanding human reference. To achieve detection based on human intention, it relies on humans to observe the scene, reason out the target that aligns with their intention (<em>"pillow"</em> in this case), and finally provide a reference to the AI system, such as <em>"A pillow on the couch"</em>. Instead, 3D intention grounding challenges AI agents to automatically observe, reason and detect the desired target solely based on human intention. To tackle this challenge, we introduce the new <strong>Intent3D</strong> dataset, consisting of 44,990 intention texts associated with 209 fine-grained classes from 1,042 scenes of the ScanNet dataset. We also establish several baselines based on different language-based 3D object detection models on our benchmark. Finally, we propose <strong>IntentNet</strong>, our unique approach, designed to tackle this intention-based detection problem. It focuses on three key aspects: intention understanding, reasoning to identify object candidates, and cascaded adaptive learning that leverages the intrinsic priority logic of different losses for multiple objective optimization. 
           </p>
         </div>
       </div>
@@ -166,7 +166,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
-          <img src="static/images/alignability_verification_dia_eccv1.drawio-1.png" style="width: 100%;">
+          <img src="static/images/data_collect.pdf" style="width: 100%;">
 
           <p style="text-align: justify; margin-top: 20px;">
             <strong>Alignability-Verification based Metric Learning</strong> is proposed to decide how well two video instances are alignable and produce an `alignability score' for effective learning from a limited labeled set. Our approach employs a triplet loss , considering videos from identical action classes as positive and those from different classes as negative. We selectively mine hard-negatives from the sampled minibatch based on alignment distance, presenting a challenging learning task for the model. Additionally, we incorporate a matching loss to quantify the alignment between videos, serving as a verification task to determine whether a video pair belongs to the same class (i.e., alignable or target label = 1) or different classes (i.e., non-alignable or target label = 0).
