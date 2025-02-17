@@ -1,6 +1,6 @@
 # Nerfies
 
-This is the repository that contains source code for the [FinePsuedo Webpage](https://daveishan.github.io/finepsuedo-webpage/).
+This is the repository that contains source code for the [Intent3D Webpage](https://daveishan.github.io/finepsuedo-webpage/).
 
 Source taken from Nerfies webpage: [Nerfies website](https://nerfies.github.io).
 
