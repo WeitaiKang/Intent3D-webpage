@@ -170,7 +170,7 @@
         <img src="images/data.png" style="width: 100%;">
 
           <p style="text-align: justify; margin-top: 20px;">
-            <strong>Alignability-Verification based Metric Learning</strong> is proposed to decide how well two video instances are alignable and produce an `alignability score' for effective learning from a limited labeled set. Our approach employs a triplet loss , considering videos from identical action classes as positive and those from different classes as negative. We selectively mine hard-negatives from the sampled minibatch based on alignment distance, presenting a challenging learning task for the model. Additionally, we incorporate a matching loss to quantify the alignment between videos, serving as a verification task to determine whether a video pair belongs to the same class (i.e., alignable or target label = 1) or different classes (i.e., non-alignable or target label = 0).
+            Our benchmark dataset, <strong>Intent3D</strong>, is built through a structured pipeline: (1) Scene Graph Construction, where we organize scene information, including object categories and bounding boxes; (2) Object Selection, ensuring diverse, non-trivial, and unambiguous objects; (3) Text Generation, leveraging GPT-4 to produce intention descriptions without explicit object mentions, encouraging reasoning-based grounding; and (4) Data Cleaning, where we manually refine the generated texts to enhance quality and clarity. Intent3D provides a rich and challenging testbed for studying intention-driven object grounding in 3D environments.
           </p>
     </div>
     </div> 
@@ -181,8 +181,7 @@
           <img src="images/method.png" style="width: 100%;">
 
           <p style="text-align: justify; margin-top: 20px;">
-            <strong>Collaborative Pseudo-labeling:</strong> The unlabeled instance undergoes processing by both video encoders (Action Encoder and Alignability Encoder). For the Action Encoder, its prediction is derived via its classification head. For the Alignability Encoder, the embedding of the instance computes class-wise alignability scores against a gallery of labeled embeddings. These scores are then used to generate a class-wise prediction using the non-parametric classifier. As these predictions stem from distinct supervisory signals—one from video-level and the other from alignability-based supervision—they offer complementary insights, resulting in a refined collaborative pseudo-label.
-          </p>
+            We propose <strong>IntentNet</strong> to address the multimodal reasoning challenges of 3D-IG, which requires 3D perception, intention understanding, and joint supervision. Our model extracts multimodal features using PointNet++, RoBERTa, and GroupFree for point cloud, text, and 3D object detection. An attention-based encoder fuses these features, followed by a decoder that refines queries for intention comprehension and box prediction. To enhance 3D understanding, we introduce Candidate Box Matching, aligning detected objects with intent. Verb-Object Alignment ensures the model captures intention semantics through contrastive learning. Finally, Cascaded Adaptive Learning optimizes training by structuring loss functions in a logical sequence, improving multimodal reasoning and performance.
     </div>
     </div> 
 
@@ -195,24 +194,14 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
-        <img src="static/images/fg_table.png" style="width: 100%;">
+        <img src="images/exp.png" style="width: 100%;">
 
         <p style="text-align: justify; margin-top: 20px;">
-          <strong>Comparison with state-of-the-art semi-supervised methods on Fine-grained Action recognition datasets</strong> under various % of labeled data settings. Highlighted <span style="color:red; font-weight:bold;">Red</span> shows the best results and <span style="color:blue; text-decoration:underline;">Blue</span> shows second best results. All results are reported on R2plus1D-18 utilizing the exact same amount of training data.
+          Our IntentNet achieves state-of-the-art performance on Intent3D, significantly outperforming prior methods by explicitly modeling intention language comprehension and reasoning over candidate boxes with cascaded optimization. On the validation set, it improves Top1-Acc@0.25 and Top1-Acc@0.5 by 11.22% and 8.05%, respectively, while boosting AP@0.25 and AP@0.5 by 9.12% and 5.43%. Similar gains are observed on the test set. Expert models, originally designed for referential language, struggle with intention language since they primarily align with nouns rather than verb-object relations, leading to inferior performance. Foundation models like 3D-VisTA benefit from broad multimodal pretraining but fall short due to their reliance on imperfect detector outputs, whereas IntentNet performs reasoning over candidate boxes, achieving better results despite using a less powerful detector. LLM-based models, such as Chat-3D-v2, perform the worst, as LLMs generally struggle with 3D-VG, and 3D-IG is even more complex. Their hallucination issues significantly impact AP metrics, though their pretrained detector and strong categorical reasoning help maintain decent Top1-Acc.
         </p>
     </div>
     </div>
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-      <!-- <h2 class="title is-3">Results</h2> -->
-      <img src="static/images/coarsegrained_table.png" style="width: 100%;">
-
-      <p style="text-align: justify; margin-top: 20px;">
-        <strong>Results on standard Coarse-grained Action recognition datasets</strong> at various % of labeled set. Highlighted <span style="color:red; font-weight:bold;">Red</span> shows the best and <span style="color:blue; text-decoration:underline;">Blue</span> shows second best results.
-
-      </p>
-  </div>
-    <!-- </div>  -->
+    
 </section>
 
 
@@ -220,10 +209,10 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-      @inproceedings{dave2024finepseudo,
-        title={FinePseudo: Improving Pseudo-Labelling through Temporal-Alignablity for Semi-Supervised Fine-Grained Action Recognition},
-        author={Dave, Ishan and Rizve, Mamshad Nayeem and Shah, Mubarak},
-        booktitle={European Conference on Computer Vision (ECCV)},
+      @article{kang2024intent3d,
+        title={Intent3D: 3D Object Detection in RGB-D Scans Based on Human Intention},
+        author={Kang, Weitai and Qu, Mengxue and Kini, Jyoti and Wei, Yunchao and Shah, Mubarak and Yan, Yan},
+        journal={arXiv preprint arXiv:2405.18295},
         year={2024}
       }
     </code></pre>
